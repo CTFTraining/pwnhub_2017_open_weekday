@@ -6,6 +6,8 @@ LABEL CHALLENGE="PWNHUB 公开赛 / 傻 fufu 的工作日"
 
 ADD src /var/www/html
 
-RUN mv /var/www/html/flag /flag_9bc85242c9f1a7663e6806778e8a8558
+RUN mv /var/www/html/flag /flag_9bc85242c9f1a7663e6806778e8a8558 && \
+    mv /var/www/html/start.sh /start.sh && \
+    chmod +x /start.sh
 
-# CMD ["/docker-php-entrypoint"]
+CMD ["/start.sh"]
